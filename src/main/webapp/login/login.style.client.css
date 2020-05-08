@@ -1,0 +1,35 @@
+.login-form {
+  max-width: 500px;
+}
+
+.login-form-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.login-input-label {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 125px;
+  min-width: 100px;
+  font-size: large;
+}
+
+::placeholder {
+  color: #008A4C;
+  opacity: 0.3;
+}
+
+.login-button-zone {
+  max-width: 500px;
+}
+
+.wbdv-login {
+  margin: 0 0 5px 0;
+}
+
+.login-zone-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

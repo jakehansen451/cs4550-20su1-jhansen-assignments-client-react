@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        rel="stylesheet"/>
+
+  <link href="../styles.css" rel="stylesheet"/>
+
+  <link href="register.style.client.css" rel="stylesheet"/>
+
+</head>
+
+<body>
+<h1>Register</h1>
+<form class="register-form">
+  <div class="form-group register-form-row">
+    <label for="usr" class="col-form-label register-input-label">Username</label>
+
+    <input
+        class="wbdv-field wbdv-username register-input-field col"
+        id="usr"
+        type="text"
+        title="Please select a username"
+    />
+  </div>
+
+  <div class="form-group register-form-row">
+    <label for="pwd" class="col-form-label register-input-label">Password</label>
+
+    <input id="pwd"
+           class="wbdv-field wbdv-password col"
+           type="password"
+    />
+  </div>
+
+  <div class="form-group register-form-row">
+    <label for="verify-pwd" class="col-form-label register-input-label">Verify Password</label>
+
+    <input id="verify-pwd"
+           class="wbdv-field wbdv-password-verify col"
+           type="password"
+    />
+  </div>
+</form>
+
+<div class="register-button-zone">
+  <button class="wbdv-button">
+    Register
+  </button>
+
+  <div>
+    <a href="../login/login.template.client.html"
+       class="wbdv-link"
+    >Already have an account? Click here to log in</a>
+  </div>
+</div>
+
+</body>
+
+</html>

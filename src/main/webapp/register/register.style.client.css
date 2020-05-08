@@ -1,0 +1,27 @@
+.register-form {
+  max-width: 500px;
+}
+
+.register-form-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.register-input-label {
+  flex-basis: 0;
+  flex-grow: 1;
+  min-width: 150px;
+  font-size: large;
+}
+
+.register-button-zone {
+  max-width: 500px;
+}
+
+.register-button {
+  width: 100%;
+  border-radius: 3px;
+  background-color: #00AA6C;
+  border-color: #008A4C;
+  margin: 0 0 5px 0;
+}
