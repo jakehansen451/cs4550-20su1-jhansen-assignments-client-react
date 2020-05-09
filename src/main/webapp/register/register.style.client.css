@@ -1,5 +1,5 @@
 .register-form {
-  max-width: 500px;
+  max-width: var(--default-max-width);
 }
 
 .register-form-row {
@@ -15,7 +15,7 @@
 }
 
 .register-button-zone {
-  max-width: 500px;
+  max-width: var(--default-max-width);
 }
 
 .register-button {

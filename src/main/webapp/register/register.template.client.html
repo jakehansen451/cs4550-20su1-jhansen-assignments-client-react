@@ -14,7 +14,15 @@
 </head>
 
 <body>
-<h1>Register</h1>
+<div class="title-bar">
+  <h1>Register</h1>
+  <a
+      class="cancel-btn wbdv-button btn btn-primary"
+      href="../index.html"
+  >
+    Cancel
+  </a>
+</div>
 <form class="register-form">
   <div class="form-group register-form-row">
     <label for="usr" class="col-form-label register-input-label">Username</label>
@@ -23,6 +31,7 @@
         class="wbdv-field wbdv-username register-input-field col"
         id="usr"
         type="text"
+        placeholder="DwayneJohnson"
         title="Please select a username"
     />
   </div>
@@ -33,6 +42,8 @@
     <input id="pwd"
            class="wbdv-field wbdv-password col"
            type="password"
+           placeholder="abc123"
+           title="Please enter a secure password"
     />
   </div>
 
@@ -42,18 +53,20 @@
     <input id="verify-pwd"
            class="wbdv-field wbdv-password-verify col"
            type="password"
+           placeholder="abc123"
+           title="Please re-enter your password for verification"
     />
   </div>
 </form>
 
 <div class="register-button-zone">
-  <button class="wbdv-button">
+  <button class="wbdv-button wbdv-register">
     Register
   </button>
 
   <div>
     <a href="../login/login.template.client.html"
-       class="wbdv-link"
+       class="wbdv-link wbdv-login"
     >Already have an account? Click here to log in</a>
   </div>
 </div>

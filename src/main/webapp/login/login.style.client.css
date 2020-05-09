@@ -1,5 +1,5 @@
 .login-form {
-  max-width: 500px;
+  max-width: var(--default-max-width);
 }
 
 .login-form-row {
@@ -21,7 +21,7 @@
 }
 
 .login-button-zone {
-  max-width: 500px;
+  max-width: var(--default-max-width);
 }
 
 .wbdv-login {

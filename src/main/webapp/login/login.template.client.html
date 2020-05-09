@@ -13,8 +13,15 @@
 </head>
 
 <body>
-
-<h1>Sign In</h1>
+<div class="title-bar">
+  <h1>Sign In</h1>
+  <a
+      class="cancel-btn wbdv-button btn btn-primary"
+      href="../index.html"
+  >
+    Cancel
+  </a>
+</div>
 <form class="login-form">
   <div class="form-group login-form-row">
     <label for="usr" class="col-form-label login-input-label">Username</label>
@@ -31,26 +38,38 @@
   <div class="form-group login-form-row">
     <label for="pwd" class="col-form-label login-input-label">Password</label>
 
-    <input id="pwd"
-           class="wbdv-field wbdv-password col"
-           type="password"
+    <input
+        id="pwd"
+        class="wbdv-field wbdv-password col"
+        type="password"
+        placeholder="abc123"
+        title="Please enter your password"
     />
   </div>
 </form>
 
 <div class="login-button-zone">
-  <button class="wbdv-button wbdv-login">
+  <a
+      href="../profile/profile.template.client.html"
+      class="wbdv-button wbdv-login btn btn-primary"
+  >
     Login
-  </button>
+  </a>
 
   <div class="login-zone-links">
-    <a href="../work-in-progress/work-in-progress.html"
-       class="wbdv-link wbdv-forgot-password"
-    >Forgot your password?</a>
+    <a
+        href="../work-in-progress/work-in-progress.html"
+        class="wbdv-link wbdv-forgot-password"
+    >
+      Forgot your password?
+    </a>
 
-    <a href="../register/register.template.client.html"
-       class="wbdv-link wbdv-register"
-    >Don't have an account yet? Register here</a>
+    <a
+        href="../register/register.template.client.html"
+        class="wbdv-link wbdv-register"
+    >
+      Don't have an account yet? Register here
+    </a>
   </div>
 </div>
 
