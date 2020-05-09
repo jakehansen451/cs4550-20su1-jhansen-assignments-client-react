@@ -1,3 +1,7 @@
+.wbdv-update {
+  margin-bottom: 15px;
+}
+
 .wbdv-logout {
   border-color: var(--default-dark-red);
 }

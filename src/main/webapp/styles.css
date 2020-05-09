@@ -47,6 +47,11 @@ body {
   margin: 0 0 15px 0;
 }
 
+.input-form-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .input-label {
   flex-basis: 0;
   flex-grow: 1;
