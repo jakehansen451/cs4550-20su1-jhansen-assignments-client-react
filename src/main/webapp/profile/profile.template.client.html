@@ -16,84 +16,87 @@
 
 <body>
 
-<h1>Profile</h1>
+<div class="title-bar profile-title-bar">
+  <h1>Profile</h1>
 
-<div>
-  <div>
-
-    <div class="form-group row">
-
-      <label class="col-lg-2 col-sm-6 col-form-label"
-             for="username">Username</label>
-      <div class="col-lg-10 col-sm-6">
-
-        <input  id="username"
-                class="form-control"
-                value="Alice"
-                type="text"
-                placeholder="joe123"
-                title="Use this username to login"/>
-      </div>
-    </div>
-    Password
-    <input type="password"/>
-    <br/>
-
-    Date of birth
-    <input type="date" value="2020-05-04">
-    <br/>
-
-    Favorite movie
-    <select>
-      <option value="AVATAR2">Avatar - 2nd highest grossing movie</option>
-      <option selected value="T2">Terminator 2</option>
-      <option value="ALIENS2">Aliens 2</option>
-      <option value="TITANIC">Titanic</option>
-    </select>
-    <br/>
-
-    Marital Status
-    <label>
-      <input type="radio" name="MSTATUS"/>Married
-    </label>
-    <label>
-      <input type="radio" name="MSTATUS"/>Single
-    </label>
-    <input type="radio" name="MSTATUS"/>Divorced
-
-    <br/>
-
-    Favorite color
-    <label>
-      <input type="radio" name="FCOLOR"/>Red
-      <input type="radio" name="FCOLOR"/>Green
-    </label>
-    <label>
-      <input type="radio" name="FCOLOR"/>Yellow
-    </label>
-    <label>
-      <input type="radio" name="FCOLOR"/>Blue
-    </label>
-
-    <br/>
-
-
-    Favorite movie genres
-    <label>
-      <input type="checkbox" value="HORROR" name="FGENRE"/>Horror
-      <input type="checkbox" value="COMEDY" name="FGENRE"/>Comedy
-    </label>
-    <label>
-      <input type="checkbox" value="DRAMA" name="FGENRE"/>Drama
-    </label>
-    <label>
-      <input type="checkbox" value="SCIFI" name="FGENRE"/>SciFi
-    </label>
-
-    <br/>
-
+  <div class="wbdv-message alert alert-success" role="alert">
+    Profile saved successfully.
   </div>
 </div>
+
+<form>
+  <div class="form-group input-form-row">
+    <label for="usr" class="col-form-label input-label">Username</label>
+
+    <input
+        class="wbdv-field wbdv-username col"
+        id="usr"
+        value="DwayneJohnson"
+        type="text"
+        placeholder="DwayneJohnson"
+        title="Use this username to login"
+        disabled
+    />
+  </div>
+
+  <div class="form-group input-form-row">
+    <label for="pwd" class="col-form-label input-label">Password</label>
+
+    <input
+        class="wbdv-field wbdv-password col"
+        id="pwd"
+        type="password"
+        placeholder="abc123"
+    />
+  </div>
+
+  <div class="form-group input-form-row">
+    <label for="phone" class="col-form-label input-label">Phone</label>
+
+    <input
+        class="wbdv-field wbdv-phone col"
+        id="phone"
+        type="tel"
+        placeholder="(123) 456-7890"
+    />
+  </div>
+
+  <div class="form-group input-form-row">
+    <label for="email" class="col-form-label input-label">Email</label>
+
+    <input
+        class="wbdv-field wbdv-email col"
+        id="email"
+        type="email"
+        placeholder="<last_name>.<first_initial>@husky.neu.edu"
+    />
+  </div>
+
+  <div class="form-group input-form-row">
+    <label for="dob" class="col-form-label input-label">Date of Birth</label>
+
+    <input
+        class="wbdv-field wbdv-dob col"
+        id="dob"
+        type="date"
+    />
+  </div>
+
+  <div class="form-group input-form-row">
+    <label for="role" class="col-form-label input-label">Role</label>
+
+    <select
+        class="wbdv-field wbdv-role col"
+        id="role"
+    >
+      <option value="Faculty">Faculty</option>
+
+      <option value="Student">Student</option>
+
+      <option value="Admin">Admin</option>
+    </select>
+  </div>
+</form>
 
 <a
     href="./profile.template.client.html"
