@@ -1,27 +1,6 @@
-.login-form {
-  max-width: var(--default-max-width);
-}
-
 .login-form-row {
   display: flex;
   flex-wrap: wrap;
-}
-
-.login-input-label {
-  flex-basis: 0;
-  flex-grow: 1;
-  max-width: 125px;
-  min-width: 100px;
-  font-size: large;
-}
-
-::placeholder {
-  color: #008A4C;
-  opacity: 0.3;
-}
-
-.login-button-zone {
-  max-width: var(--default-max-width);
 }
 
 .wbdv-login {

@@ -17,7 +17,7 @@
 <div class="title-bar">
   <h1>Register</h1>
   <a
-      class="cancel-btn wbdv-button btn btn-primary"
+      class="cancel-btn wbdv-button btn btn-success"
       href="../index.html"
   >
     Cancel
@@ -25,7 +25,7 @@
 </div>
 <form class="register-form">
   <div class="form-group register-form-row">
-    <label for="usr" class="col-form-label register-input-label">Username</label>
+    <label for="usr" class="col-form-label input-label">Username</label>
 
     <input
         class="wbdv-field wbdv-username register-input-field col"
@@ -37,7 +37,7 @@
   </div>
 
   <div class="form-group register-form-row">
-    <label for="pwd" class="col-form-label register-input-label">Password</label>
+    <label for="pwd" class="col-form-label input-label">Password</label>
 
     <input id="pwd"
            class="wbdv-field wbdv-password col"
@@ -48,7 +48,7 @@
   </div>
 
   <div class="form-group register-form-row">
-    <label for="verify-pwd" class="col-form-label register-input-label">Verify Password</label>
+    <label for="verify-pwd" class="col-form-label input-label">Verify Password</label>
 
     <input id="verify-pwd"
            class="wbdv-field wbdv-password-verify col"
@@ -59,15 +59,21 @@
   </div>
 </form>
 
-<div class="register-button-zone">
-  <button class="wbdv-button wbdv-register">
-    Register
-  </button>
+<div>
+  <a
+      href="../profile/profile.template.client.html"
+      class="wbdv-button wbdv-register btn btn-success"
+  >
+      Register
+  </a>
 
   <div>
-    <a href="../login/login.template.client.html"
-       class="wbdv-link wbdv-login"
-    >Already have an account? Click here to log in</a>
+    <a
+        href="../login/login.template.client.html"
+        class="wbdv-link wbdv-login"
+    >
+      Already have an account? Click here to log in
+    </a>
   </div>
 </div>
 
