@@ -1,9 +1,9 @@
 .profile-title-bar {
-  display: block;
+  margin-bottom: 0.5rem;
 }
 
 .wbdv-update {
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
 }
 
 .wbdv-logout {

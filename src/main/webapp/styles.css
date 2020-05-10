@@ -16,8 +16,10 @@
   --dark-grey: #35353b;
   --darker-grey: #25242d;
   --darkest-grey: #19191c;
-  --red: #DC143C;
-  --dark-red: #BC042C;
+  --light-red: #fa6c68;
+  --red: #CD5C5C;
+  --dark-red: #8B0000;
+  --darker-red: #590000;
 }
 
 ::placeholder {
@@ -32,13 +34,13 @@ body {
 
 .wbdv-field {
   border-radius: 3px;
-  border: 1px solid var(--dark-green);
+  border: 1px solid var(--green);
   background: #F9F9F9;
   flex-basis: 15em;
 }
 
 .wbdv-link {
-  font-size: 14px;
+  font-size: 0.85rem;
   min-width: max-content;
 }
 
@@ -52,14 +54,16 @@ body {
 }
 
 .title-bar {
+  background-color: var(--lightest-grey);
+  border-radius: 0.25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 0 15px 0;
+  padding: 0.5rem 1rem;
 }
 
 .input-form-row {
-  font-weight: bold;
   display: flex;
   flex-wrap: wrap;
 }
@@ -78,4 +82,34 @@ body {
 
 .row {
   margin: 0;
+}
+
+.green-btn {
+  background-color: var(--lighter-green);
+  border-color: var(--green);
+  color: var(--dark-green);
+}
+
+.green-btn:hover {
+  background-color: var(--green);
+  border-color: var(--dark-green);
+  color: var(--darker-green);
+}
+
+.red-btn {
+  background-color: var(--light-red);
+  border-color: var(--red);
+  color: var(--dark-red);
+}
+
+.red-btn:hover {
+  background-color: var(--red);
+  border-color: var(--dark-red);
+  color: var(--darker-red);
+}
+
+.green-alert {
+  background-color: var(--lightest-green);
+  border-color: var(--lighter-green);
+  color: var(--dark-green);
 }
