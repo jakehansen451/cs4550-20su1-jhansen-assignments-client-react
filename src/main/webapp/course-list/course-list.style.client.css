@@ -60,6 +60,10 @@ body {
   border-top-right-radius: 0.5rem;
 }
 
+.course-table {
+  margin-bottom: 0;
+}
+
 .table-button {
   background-color: inherit;
   border: none;
@@ -82,4 +86,17 @@ tr td:last-child{
 
 .course-table-icon-row {
   text-align: center;
+}
+
+.title-link {
+  color: var(--text-color);
+}
+
+.title-link:hover {
+  color: var(--green);
+  text-decoration: none;
+}
+
+.wbdv-delete {
+  width: max-content;
 }
