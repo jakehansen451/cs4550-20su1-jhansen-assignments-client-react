@@ -1,19 +1,23 @@
 :root {
-  --default-max-width: 1000px;
-  --default-text-color: #212529;
-  --default-green: #00AA6C;
-  --default-dark-green: #008A4C;
-  --default-darker-green: #00582d;
+  --max-width: 1200px;
+  --text-color: #212529;
+  --faded-light-green: rgba(210, 238, 172, 0.5);
+  --lightest-green: #aecb91;
+  --lighter-green: #9baf86;
+  --green: #6d7f5c;
+  --dark-green: #344126;
+  --darker-green: #181e13;
   --white: #FFFFFF;
-  --default-lightest-grey: #f8f9fa;
-  --default-lighter-grey: #dee2e6;
-  --default-light-grey: #BBBBBB;
-  --default-grey: #909090;
-  --default-dark-grey: #848484;
-  --default-darker-grey: #666666;
-  --default-darkest-grey: #333333;
-  --default-red: #DC143C;
-  --default-dark-red: #BC042C;
+  --lightest-grey: #dee2e6;
+  --very-light-grey: #cdccd1;
+  --lighter-grey: #9f9ea4;
+  --light-grey: #6b6d70;
+  --grey: #4d4d50;
+  --dark-grey: #35353b;
+  --darker-grey: #25242d;
+  --darkest-grey: #19191c;
+  --red: #DC143C;
+  --dark-red: #BC042C;
 }
 
 ::placeholder {
@@ -22,13 +26,13 @@
 
 body {
   padding: 25px 50px;
-  background-color: var(--default-lightest-grey);
-  max-width: var(--default-max-width);
+  background-color: var(--white);
+  max-width: var(--max-width);
 }
 
 .wbdv-field {
   border-radius: 3px;
-  border: 1px solid #008A4C;
+  border: 1px solid var(--dark-green);
   background: #F9F9F9;
   flex-basis: 15em;
 }
@@ -42,7 +46,7 @@ body {
   width: 100%;
   height: 40px;
   border-radius: 3px;
-  border-color: var(--default-dark-green);
+  border-color: var(--dark-green);
   font-size: large;
   color: var(--white);
 }

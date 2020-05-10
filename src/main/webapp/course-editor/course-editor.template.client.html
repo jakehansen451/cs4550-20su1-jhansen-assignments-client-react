@@ -17,7 +17,7 @@
 </head>
 
 <body>
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-light editor-main-navbar">
   <div>
     <a
         class="fa fa-arrow-circle-left wbdv-course-editor wbdv-close icon-link"
@@ -26,35 +26,35 @@
     </a>
     <div class="navbar-brand wbdv-course-title" href="#">CS4550 - WebDev</div>
   </div>
-  <ul class="editor-main-navbar navbar-nav mr-auto">
-    <li class="nav-item editor-main-navbar-item active wbdv-page-tab">
+  <ul class="editor-navbar-content navbar-nav mr-auto">
+    <li class="nav-item editor-navbar-content-item active wbdv-page-tab">
       <a class="nav-link" href="#" aria-disabled="true">Pages</a>
     </li>
 
-    <li class="nav-item editor-main-navbar-item">
+    <li class="nav-item editor-navbar-content-item">
       <a class="nav-link" href="#" aria-disabled="true">Build</a>
     </li>
 
-    <li class="nav-item editor-main-navbar-item">
+    <li class="nav-item editor-navbar-content-item">
       <a class="nav-link" href="#" aria-disabled="true">Theme</a>
     </li>
 
-    <li class="nav-item editor-main-navbar-item">
+    <li class="nav-item editor-navbar-content-item">
       <a class="nav-link" href="#" aria-disabled="true">Store</a>
     </li>
 
-    <li class="nav-item editor-main-navbar-item">
+    <li class="nav-item editor-navbar-content-item">
       <a class="nav-link" href="#" aria-disabled="true">Apps</a>
     </li>
 
-    <li class="nav-item editor-main-navbar-item">
-      <div class="nav-link icon-link wbdv-new-page-btn" href="#" aria-disabled="true">+</div>
+    <li class="nav-item editor-navbar-content-item">
+      <a class="nav-link icon-link wbdv-new-page-btn" href="#" aria-disabled="true">+</a>
     </li>
   </ul>
 </nav>
 
 <div class="row">
-  <div class="col-4">
+  <div class="col-3">
     <div>
       <div class="module-list-header">
         <div>Modules</div>
@@ -69,35 +69,35 @@
         <li class="list-group-item wbdv-module-item module-selected">
           <div class="wbdv-module-item-title">Module 1</div>
           <a
-              class="icon-link wbdv-module-item-delete-btn"
+              class="icon-link delete-btn wbdv-module-item-delete-btn"
               href="#"
           >X</a>
         </li>
         <li class="list-group-item wbdv-module-item">
           <div class="wbdv-module-item-title">Module 2</div>
           <a
-              class="icon-link wbdv-module-item-delete-btn"
+              class="icon-link delete-btn wbdv-module-item-delete-btn"
               href="#"
           >X</a>
         </li>
         <li class="list-group-item wbdv-module-item">
           <div class="wbdv-module-item-title">Module 3</div>
           <a
-              class="icon-link wbdv-module-item-delete-btn"
+              class="icon-link delete-btn wbdv-module-item-delete-btn"
               href="#"
           >X</a>
         </li>
         <li class="list-group-item wbdv-module-item">
           <div class="wbdv-module-item-title">Module 4</div>
           <a
-              class="icon-link wbdv-module-item-delete-btn"
+              class="icon-link delete-btn wbdv-module-item-delete-btn"
               href="#"
           >X</a>
         </li>
         <li class="list-group-item wbdv-module-item">
           <div class="wbdv-module-item-title">Module 5</div>
           <a
-              class="icon-link wbdv-module-item-delete-btn"
+              class="icon-link delete-btn wbdv-module-item-delete-btn"
               href="#"
           >X</a>
         </li>
@@ -105,7 +105,7 @@
     </div>
   </div>
 
-  <div class="topics-list col-8">
+  <div class="topics-list col-9">
     <div>
       <ul class="nav nav-tabs topic-navbar wbdv-topic-pill-list">
         <li class="nav-item">
@@ -123,16 +123,122 @@
       </ul>
     </div>
     <div class="topic-content">
-      <br/>
       <div>
         <h2>Widgets</h2>
-        <ol>
-          <li>Widget 1</li>
-          <li>Widget 2</li>
-          <li>Widget 3</li>
-          <li>Widget 4</li>
-          <li>Widget 5</li>
-        </ol>
+        <div class="accordion" id="widget-accordion">
+          <div class="card">
+            <div class="card-header widget-heading-bar" id="widget1-heading">
+              <button
+                  class="btn btn-link widget-clickable-label"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#widget1"
+                  aria-expanded="true"
+                  aria-controls="widget1"
+              >
+                Heading widget
+              </button>
+              <div>
+                <div class="btn-group">
+                  <button class="fa fa-arrow-up btn btn-light"></button>
+                  <button class="fa fa-arrow-down btn btn-light"></button>
+                </div>
+                <a
+                    class="icon-link delete-btn"
+                    href="#"
+                >X</a>
+              </div>
+            </div>
+            <div
+                id="widget1"
+                class="collapse show widget-body"
+                aria-labelledby="widget1-heading"
+                data-parent="#widget-accordion"
+            >
+              <form>
+                <div class="form-group widget-edit-row">
+                  <label class="col-form-label widget-input-label" for="widget-name-input">
+                    Widget name:
+                  </label>
+                  <input
+                      class="widget-input-field wbdv-field col"
+                      id="widget-name-input"
+                      type="text"
+                      placeholder="Heading widget"
+                  />
+                </div>
+                <div class="form-group widget-edit-row">
+                  <label class="col-form-label widget-input-label">
+                    Widget type:
+                  </label>
+                  <select class="widget-input-field wbdv-field col">
+                    <option value="Heading">Heading</option>
+                    <option value="Widget type 2">Widget type 2</option>
+                    <option value="Widget type 3">Widget type 3</option>
+                  </select>
+                </div>
+              </form>
+              <form class="heading-widget-edit">
+                <div class="widget-edit-heading">Heading widget</div>
+                <div class="widget-edit-row">
+                  <label class="col-form-label widget-input-label" for="heading-body-input">
+                    Heading text:
+                  </label>
+                  <input
+                      class="widget-input-field wbdv-field col"
+                      id="heading-body-input"
+                      type="text"
+                      placeholder="Put your heading text here"
+                  />
+                </div>
+              </form>
+              <h5>Widget Preview:</h5>
+              <div class="heading-widget-preview">
+                <h2>Put your heading text here</h2>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+          <div class="card">
+            <div class="card-header widget-heading-bar" id="widget2-heading">
+              <button
+                  class="btn btn-link widget-clickable-label"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#widget2"
+                  aria-expanded="true"
+                  aria-controls="widget2"
+              >
+                Widget 2
+              </button>
+              <div>
+                <div class="btn-group">
+                  <button class="fa fa-arrow-up btn btn-light"></button>
+                  <button class="fa fa-arrow-down btn btn-light"></button>
+                </div>
+                <a
+                    class="icon-link delete-btn"
+                    href="#"
+                >X</a>
+              </div>
+            </div>
+            <div
+                id="widget2"
+                class="collapse"
+                aria-labelledby="widget2-heading"
+                data-parent="#widget-accordion"
+            >
+              <div>
+                Widget 2 body
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
