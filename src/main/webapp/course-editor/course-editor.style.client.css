@@ -13,12 +13,6 @@
   padding: 0.5rem 1rem;
 }
 
-.icon-link {
-  color: var(--text-color);
-  font-weight: bold;
-  margin: 0 0.25rem;
-}
-
 .wbdv-close {
   font-size: x-large;
   margin: 0 1em 0 0;
@@ -48,23 +42,11 @@
   background-color: var(--lightest-green);
 }
 
-.icon-link:hover {
-  color: var(--green);
-  text-decoration: none;
-}
-
-.delete-btn:hover {
-  color: var(--dark-red)
-}
-
 .topic-content {
   border: 1px solid var(--lightest-grey);
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
   padding: 10px;
-}
-
-.topic-selected {
 }
 
 .topic-link {

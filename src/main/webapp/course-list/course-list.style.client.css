@@ -1,0 +1,85 @@
+body {
+  padding-top: 75px;
+}
+
+.course-list-search-navbar {
+  margin: 0 50px;
+  padding: 0.75rem;
+  max-width: calc(var(--max-width) - 100px);
+  box-sizing: border-box;
+  background-color: var(--lightest-grey);
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  border: 1px solid var(--lighter-grey);
+}
+
+.navbar-search-chunk {
+  display: inline-flex;
+  flex-wrap: nowrap;
+}
+
+.wbdv-hamburger {
+  background-color: inherit;
+  border: none;
+  font-size: medium;
+  padding: 0.25rem;
+}
+
+.course-list-search-input {
+  margin: 0 1rem;
+}
+
+.add-course-chunk {
+  display: inline-flex;
+  align-items: center;
+}
+
+.wbdv-new-course {
+  background: inherit;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.wbdv-add-course {
+  width: max-content;
+  font-size: xx-large;
+  line-height: 1;
+  margin: 0 1rem;
+}
+
+.course-list-table-header {
+  background-color: var(--lightest-green);
+  padding: 0.5rem;
+  margin-bottom: 0;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+.class-table {
+  border: 1px solid var(--green);
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.table-button {
+  background-color: inherit;
+  border: none;
+  width: max-content;
+}
+
+tr td:first-child{
+  width: 6%;
+  white-space:nowrap;
+}
+
+tr td:last-child{
+  width: 12%;
+  white-space:nowrap;
+}
+
+.wbdv-icon {
+  font-weight: normal;
+}
+
+.course-table-icon-row {
+  text-align: center;
+}

@@ -37,6 +37,7 @@ body {
   border: 1px solid var(--green);
   background: #F9F9F9;
   flex-basis: 15em;
+  padding: 0.25rem 0.75rem;
 }
 
 .wbdv-link {
@@ -54,13 +55,10 @@ body {
 }
 
 .title-bar {
-  background-color: var(--lightest-grey);
-  border-radius: 0.25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 0 15px 0;
-  padding: 0.5rem 1rem;
+  margin: 0 0 1rem 0;
 }
 
 .input-form-row {
@@ -112,4 +110,19 @@ body {
   background-color: var(--lightest-green);
   border-color: var(--lighter-green);
   color: var(--dark-green);
+}
+
+.icon-link {
+  color: var(--text-color);
+  font-weight: bold;
+  margin: 0 0.25rem;
+}
+
+.icon-link:hover {
+  color: var(--green);
+  text-decoration: none;
+}
+
+.delete-btn:hover {
+  color: var(--dark-red)
 }

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Course List</title>
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        rel="stylesheet"/>
+
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        rel="stylesheet"/>
+
+  <link href="../styles.css" rel="stylesheet"/>
+
+  <link href="./course-list.style.client.css"
+        rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar fixed-top course-list-search-navbar">
+  <div>
+    <button class="fa fa-bars icon-link wbdv-field wbdv-hamburger"></button>
+    <a class="navbar-brand wbdv-label wbdv-course-manager">Course Manager</a>
+  </div>
+  <form class="navbar-search-chunk">
+    <input
+        class="wbdv-field course-list-search-input"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+    >
+    <button class="btn green-btn" type="submit">Search</button>
+  </form>
+</nav>
+
+<div class="class-table">
+  <div class="title-bar course-list-table-header">
+    <h1>Course List</h1>
+    <div class="add-course-chunk">
+      <input
+          class="wbdv-field wbdv-new-course"
+          id="add-course-title"
+          type="text"
+          placeholder="Add a course"
+          title="Add the title of the new course"
+      />
+      <a class="wbdv-button wbdv-add-course icon-link" href="#">+</a>
+    </div>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th></th>
+      <th class="wbdv-header wbdv-title">Title</th>
+      <th class="wbdv-header wbdv-owner">Owned By</th>
+      <th class="wbdv-header wbdv-last-modified">Modified</th>
+      <th class="wbdv-header wbdv-sort">
+        <div class="d-flex justify-content-between">
+          <button class="fa fa-sort table-button icon-link"></button>
+          <button class="fa fa-th table-button icon-link wbdv-button wbdv-grid-layout"></button>
+          <button class="fa fa-bars table-button icon-link wbdv-button wbdv-list-layout"></button>
+        </div>
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="wbdv-row wbdv-course">
+      <td class="course-table-icon-row">
+        <a
+            class="fa fa-file-text wbdv-row wbdv-icon icon-link"
+            href="../course-editor/course-editor.template.client.html"
+        ></a>
+      </td>
+      <td class="wbdv-row wbdv-title">CS3800</td>
+      <td class="wbdv-row wbdv-owner">Walter Schnyder</td>
+      <td class="wbdv-row wbdv-modified-date">Today</td>
+      <td>
+        <button class="float-right btn red-btn">
+          <i class="fa fa-trash"></i>
+        </button></td>
+    </tr>
+    <tr class="wbdv-row wbdv-course">
+      <td class="course-table-icon-row">
+        <a
+            class="fa fa-file-text wbdv-row wbdv-icon icon-link"
+            href="../course-editor/course-editor.template.client.html"
+        ></a>
+      </td>
+      <td class="wbdv-row wbdv-title">CS4100</td>
+      <td class="wbdv-row wbdv-owner">Kevin Gold</td>
+      <td class="wbdv-row wbdv-modified-date">Today</td>
+      <td>
+        <button class="float-right btn red-btn">
+          <a class="fa fa-trash"></a>
+        </button></td>
+      </td>
+    </tr>
+    <tr class="wbdv-row wbdv-course">
+      <td class="course-table-icon-row">
+        <a
+            class="fa fa-file-text wbdv-row wbdv-icon icon-link"
+            href="../course-editor/course-editor.template.client.html"
+        ></a>
+      </td>
+      <td class="wbdv-row wbdv-title">CS4500</td>
+      <td class="wbdv-row wbdv-owner">Matthias Felleisen</td>
+      <td class="wbdv-row wbdv-modified-date">Today</td>
+      <td>
+        <button class="float-right btn red-btn">
+          <i class="fa fa-trash"></i>
+        </button></td>
+      </td>
+    </tr>
+    <tr class="wbdv-row wbdv-course">
+      <td class="course-table-icon-row">
+        <a
+            class="fa fa-file-text wbdv-row wbdv-icon icon-link"
+            href="../course-editor/course-editor.template.client.html"
+        ></a>
+      </td>
+      <td class="wbdv-row wbdv-title">CS4550</td>
+      <td class="wbdv-row wbdv-owner">Jose Annunziato</td>
+      <td class="wbdv-row wbdv-modified-date">Today</td>
+      <td>
+        <button class="float-right btn red-btn">
+          <i class="fa fa-trash"></i>
+        </button></td>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
