@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Course Editor</title>
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        rel="stylesheet"/>
+
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        rel="stylesheet"/>
+
+  <link href="../styles.css" rel="stylesheet"/>
+
+  <link href="course-editor.style.client.css" rel="stylesheet"/>
+
+</head>
+
+<body>
+<nav class="navbar navbar-light bg-light">
+  <div>
+    <a
+        class="fa fa-arrow-circle-left wbdv-course-editor wbdv-close icon-link"
+        href="../index.html"
+    >
+    </a>
+    <div class="navbar-brand wbdv-course-title" href="#">CS4550 - WebDev</div>
+  </div>
+  <ul class="editor-main-navbar navbar-nav mr-auto">
+    <li class="nav-item editor-main-navbar-item active wbdv-page-tab">
+      <a class="nav-link" href="#" aria-disabled="true">Pages</a>
+    </li>
+
+    <li class="nav-item editor-main-navbar-item">
+      <a class="nav-link" href="#" aria-disabled="true">Build</a>
+    </li>
+
+    <li class="nav-item editor-main-navbar-item">
+      <a class="nav-link" href="#" aria-disabled="true">Theme</a>
+    </li>
+
+    <li class="nav-item editor-main-navbar-item">
+      <a class="nav-link" href="#" aria-disabled="true">Store</a>
+    </li>
+
+    <li class="nav-item editor-main-navbar-item">
+      <a class="nav-link" href="#" aria-disabled="true">Apps</a>
+    </li>
+
+    <li class="nav-item editor-main-navbar-item">
+      <div class="nav-link icon-link wbdv-new-page-btn" href="#" aria-disabled="true">+</div>
+    </li>
+  </ul>
+</nav>
+
+<div class="row">
+  <div class="col-4">
+    <div>
+      <div class="module-list-header">
+        <div>Modules</div>
+        <a
+            class="wbdv-module-item-add-btn icon-link"
+            href="#"
+        >+</a>
+      </div>
+
+
+      <ul class="list-group wbdv-module-list">
+        <li class="list-group-item wbdv-module-item module-selected">
+          <div class="wbdv-module-item-title">Module 1</div>
+          <a
+              class="icon-link wbdv-module-item-delete-btn"
+              href="#"
+          >X</a>
+        </li>
+        <li class="list-group-item wbdv-module-item">
+          <div class="wbdv-module-item-title">Module 2</div>
+          <a
+              class="icon-link wbdv-module-item-delete-btn"
+              href="#"
+          >X</a>
+        </li>
+        <li class="list-group-item wbdv-module-item">
+          <div class="wbdv-module-item-title">Module 3</div>
+          <a
+              class="icon-link wbdv-module-item-delete-btn"
+              href="#"
+          >X</a>
+        </li>
+        <li class="list-group-item wbdv-module-item">
+          <div class="wbdv-module-item-title">Module 4</div>
+          <a
+              class="icon-link wbdv-module-item-delete-btn"
+              href="#"
+          >X</a>
+        </li>
+        <li class="list-group-item wbdv-module-item">
+          <div class="wbdv-module-item-title">Module 5</div>
+          <a
+              class="icon-link wbdv-module-item-delete-btn"
+              href="#"
+          >X</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="topics-list col-8">
+    <div>
+      <ul class="nav nav-tabs topic-navbar wbdv-topic-pill-list">
+        <li class="nav-item">
+          <a class="nav-link topic-link wbdv-topic-pill active topic-selected" href="#">Topic 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link topic-link wbdv-topic-pill" href="#">Topic 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link topic-link wbdv-topic-pill" href="#">Topic 3</a>
+        </li>
+        <li class="nav-item">
+          <div class="nav-link topic-link icon-link wbdv-topic-add-btn" href="#">+</div>
+        </li>
+      </ul>
+    </div>
+    <div class="topic-content">
+      <br/>
+      <div>
+        <h2>Widgets</h2>
+        <ol>
+          <li>Widget 1</li>
+          <li>Widget 2</li>
+          <li>Widget 3</li>
+          <li>Widget 4</li>
+          <li>Widget 5</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

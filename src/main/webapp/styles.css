@@ -1,10 +1,17 @@
 :root {
   --default-max-width: 1000px;
-  --default-dark-green: #008A4C;
+  --default-text-color: #212529;
   --default-green: #00AA6C;
-  --default-dark-grey: #555555;
-  --default-grey: #7F7F7F;
-  --default-light-grey: #F9F9F9;
+  --default-dark-green: #008A4C;
+  --default-darker-green: #00582d;
+  --white: #FFFFFF;
+  --default-lightest-grey: #f8f9fa;
+  --default-lighter-grey: #dee2e6;
+  --default-light-grey: #BBBBBB;
+  --default-grey: #909090;
+  --default-dark-grey: #848484;
+  --default-darker-grey: #666666;
+  --default-darkest-grey: #333333;
   --default-red: #DC143C;
   --default-dark-red: #BC042C;
 }
@@ -15,7 +22,7 @@
 
 body {
   padding: 25px 50px;
-  background-color: var(--default-light-grey);
+  background-color: var(--default-lightest-grey);
   max-width: var(--default-max-width);
 }
 
@@ -37,7 +44,7 @@ body {
   border-radius: 3px;
   border-color: var(--default-dark-green);
   font-size: large;
-  color: var(--default-light-grey);
+  color: var(--white);
 }
 
 .title-bar {
@@ -63,4 +70,8 @@ body {
 .cancel-btn {
   max-width: 100px;
   font-size: medium;
+}
+
+.row {
+  margin: 0;
 }
