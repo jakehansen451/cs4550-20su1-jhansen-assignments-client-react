@@ -6,14 +6,14 @@
   let selectedUser = {};
 
   const userRowTemplate = '<tr>\n'
-      + '  <td class="wbdv-username">alice</td>\n'
-      + '  <td class="wbdv-password">****</td>\n'
-      + '  <td class="wbdv-first-name">Alice</td>\n'
-      + '  <td class="wbdv-last-name">Wonderland</td>\n'
-      + '  <td class="wbdv-role">Faculty</td>\n'
+      + '  <td class="wbdv-username"></td>\n'
+      + '  <td class="wbdv-password"></td>\n'
+      + '  <td class="wbdv-first-name"></td>\n'
+      + '  <td class="wbdv-last-name"></td>\n'
+      + '  <td class="wbdv-role"></td>\n'
       + '  <td class="wbdv-controls">\n'
-      + '    <button class="wbdv-delete">Delete</button>\n'
-      + '    <button class="wbdv-edit">Edit</button>\n'
+      + '    <i class="float-right icon-link delete-btn fa-2x fa fa-times wbdv-delete-btn"></i>\n'
+      + '    <i class="float-right icon-link fa-2x fa fa-pencil wbdv-edit-btn"></i>\n'
       + '  </td>\n'
       + '</tr>';
 
@@ -33,15 +33,17 @@
   function renderUser(user) {
     selectedUser = user;
     $usernameFld.val(user.username);
+    $passwordFld.val('');
     $firstFld.val(user.first);
     $lastFld.val(user.last);
+    $roleFld.val(user.role);
   }
 
   function updateUser() {
     const updatedUser = {
       _id: selectedUser._id,
       username: $usernameFld.val(),
-      password: $passwordFld.val(),
+      password: $passwordFld.val() ? $passwordFld.val() : selectedUser.password,
       first: $firstFld.val(),
       last: $lastFld.val(),
       role: $roleFld.val(),
@@ -50,9 +52,9 @@
     .then(function(status) {
       users = users.map(function(user) {
         return user._id === selectedUser._id ? updatedUser : user;
-      })
+      });
+      renderAllUsers();
     });
-    renderAllUsers();
   }
 
   function selectUser(event) {
@@ -73,15 +75,12 @@
       const user = users[i];
       const copy = clone.clone();
       copy.find('.wbdv-username').html(user.username);
+      copy.find('.wbdv-password').html('*'.repeat(user.password.length));
       copy.find('.wbdv-first-name').html(user.first);
       copy.find('.wbdv-last-name').html(user.last);
       copy.find('.wbdv-role').html(user.role);
-      copy.find('.wbdv-delete')
-      .attr('id', user._id)
-      .click(deleteUser);
-      copy.find('.wbdv-edit')
-      .attr('id', user._id)
-      .click(selectUser);
+      copy.find('.wbdv-delete-btn').attr('id', user._id).click(deleteUser);
+      copy.find('.wbdv-edit-btn').attr('id', user._id).click(selectUser);
       $tbody.append(copy)
     }
   }
