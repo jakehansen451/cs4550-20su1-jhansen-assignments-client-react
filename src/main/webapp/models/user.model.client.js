@@ -1,5 +1,16 @@
-function User(username, password, email, firstName, lastName, phone, role, dob) {
+function User(
+    id,
+    username,
+    password,
+    email,
+    firstName,
+    lastName,
+    phone,
+    role,
+    dob) {
+
   // Constants
+  this.id = id ? id :  (() =>  { throw "User ID cannot be null" })();
   this.username = username;
   this.password = password;
   this.email = email;
@@ -9,87 +20,101 @@ function User(username, password, email, firstName, lastName, phone, role, dob) 
   this.role = role;
   this.dob = dob;
 
-  // Bindings
-  this.getUsername = getUsername;
-  this.getPassword = getPassword;
-  this.getEmail = getEmail;
-  this.getFirstName = getFirstName;
-  this.getLastName = getLastName;
-  this.getPhone = getPhone;
-  this.getRole = getRole;
-  this.getDoB = getDoB;
-
-  this.setUsername = setUsername;
-  this.setPassword = setPassword;
-  this.setEmail = setEmail;
-  this.setFirstName = setFirstName;
-  this.setLastName = setLastName;
-  this.setPhone = setPhone;
-  this.setRole = setRole;
-  this.setDoB = setDoB;
-
   // Getters
-  function getUsername() {
+  function getId() {
+    return this.id;
+  };
+
+  this.getUsername = () => {
     return this.username;
-  }
+  };
 
-  function getPassword() {
+  this.getPassword = () => {
     return this.password;
-  }
+  };
 
-  function getEmail() {
+  this.getEmail = () => {
     return this.email;
-  }
+  };
 
-  function getFirstName() {
+  this.getFirstName = () => {
     return this.firstName;
-  }
+  };
 
-  function getLastName() {
+  this.getLastName = () => {
     return this.lastName;
-  }
+  };
 
-  function getPhone() {
+  this.getPhone = () => {
     return this.phone;
-  }
+  };
 
-  function getRole() {
+  this.getRole = () => {
     return this.role;
-  }
+  };
 
-  function getDoB() {
+  this.getDoB = () => {
     return this.dob;
-  }
+  };
 
   // Setters
-  function setUsername(username) {
+  this.setUsername = (username) => {
     this.username = username;
-  }
-  function setPassword(username) {
-    this.username = username;
-  }
+    return this;
+  };
 
-  function setEmail(email) {
+  this.setPassword = (password) => {
+    this.password = password;
+    return this;
+  };
+
+  this.setEmail = (email) =>{
     this.email = email;
-  }
+    return this;
+  };
 
-  function setFirstName(firstName) {
+  this.setFirstName = (firstName) => {
     this.firstName = firstName;
-  }
+    return this;
+  };
 
-  function setLastName(lastName) {
+  this.setLastName = (lastName) => {
     this.lastName = lastName;
-  }
+    return this;
+  };
 
-  function setPhone(phone) {
+  this.setPhone = (phone) => {
     this.phone = phone;
-  }
+    return this;
+  };
 
-  function setRole(role) {
+  this.setRole = (role) => {
     this.role = role;
-  }
+    return this;
+  };
 
-  function setDoB(dob) {
+  this.setDoB = (dob) => {
     this.dob = dob;
-  }
+    return this;
+  };
+
+  // Bindings
+  this.getId = getId;
+  this.getUsername.bind(this);
+  this.getPassword.bind(this);
+  this.getEmail.bind(this);
+  this.getFirstName.bind(this);
+  this.getLastName.bind(this);
+  this.getPhone.bind(this);
+  this.getRole.bind(this);
+  this.getDoB.bind(this);
+
+  this.setUsername.bind(this);
+  this.setPassword.bind(this);
+  this.setEmail.bind(this);
+  this.setFirstName.bind(this);
+  this.setLastName.bind(this);
+  this.setPhone.bind(this);
+  this.setRole.bind(this);
+  this.setDoB.bind(this);
 }
