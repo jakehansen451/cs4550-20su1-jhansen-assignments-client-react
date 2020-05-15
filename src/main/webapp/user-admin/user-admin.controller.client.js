@@ -1,6 +1,6 @@
 (function () {
   let users = [];
-  let $tbody, $addBtn, $updateBtn;
+  let $tbody, $searchBtn, $addBtn, $updateBtn;
   let $usernameFld, $passwordFld, $firstFld, $lastFld, $roleFld;
   let service = new AdminUserServiceClient();
   let selectedUser = {};
@@ -64,19 +64,28 @@
     })
   }
 
-  function renderAllUsers() {
+  function regexMatchesFields(regexes, user) {
+    return user.getUsername().match(regexes[0])
+        && user.getFirstName().match(regexes[1])
+        && user.getLastName().match(regexes[2])
+        && user.getRole().match(regexes[3]);
+  }
+
+  function renderAllUsers(regexes=['.*', '.*', '.*', '.*']) {
     $tbody.empty();
     for(let i=0; i<users.length; i++) {
       const user = users[i];
-      const copy = $(userRowTemplate).clone();
-      copy.find('.wbdv-username').html(user.getUsername());
-      copy.find('.wbdv-password').html('*'.repeat(user.getPassword().length));
-      copy.find('.wbdv-first-name').html(user.getFirstName());
-      copy.find('.wbdv-last-name').html(user.getLastName());
-      copy.find('.wbdv-role').html(user.getRole());
-      copy.find('.wbdv-delete-btn').attr('id', user.getId()).click(deleteUser);
-      copy.find('.wbdv-edit-btn').attr('id', user.getId()).click(selectUser);
-      $tbody.append(copy)
+      if (regexMatchesFields(regexes, user)) {
+        const copy = $(userRowTemplate).clone();
+        copy.find('.wbdv-username').html(user.getUsername());
+        copy.find('.wbdv-password').html('*'.repeat(user.getPassword().length));
+        copy.find('.wbdv-first-name').html(user.getFirstName());
+        copy.find('.wbdv-last-name').html(user.getLastName());
+        copy.find('.wbdv-role').html(user.getRole());
+        copy.find('.wbdv-delete-btn').attr('id', user.getId()).click(deleteUser);
+        copy.find('.wbdv-edit-btn').attr('id', user.getId()).click(selectUser);
+        $tbody.append(copy)
+      }
     }
   }
 
@@ -130,6 +139,17 @@
     })
   }
 
+  function searchUsers() {
+    const regexes = [
+      new RegExp($usernameFld.val() ? '.*' + $usernameFld.val() + '+.*' : '.*'),
+      new RegExp($firstFld.val() ? '.*' + $firstFld.val() + '+.*' : '.*'),
+      new RegExp($lastFld.val() ? '.*' + $lastFld.val() + '+.*' : '.*'),
+      new RegExp($roleFld.val() ? '.*' + $roleFld.val() + '+.*' : '.*')
+    ];
+    renderAllUsers(regexes);
+    clearForm();
+  }
+
   function clearForm() {
     $usernameFld.val('');
     $passwordFld.val('');
@@ -140,9 +160,11 @@
 
   function main() {
     $tbody = $('tbody');
+    $searchBtn = $('.wbdv-search-btn');
     $addBtn = $('.wbdv-add-btn');
     $updateBtn = $('.wbdv-update-btn');
 
+    $searchBtn.click(searchUsers);
     $addBtn.click(createUser);
     $updateBtn.click(updateUser);
 
