@@ -22,65 +22,60 @@
     const $button = $(target);
     const userId = $button.attr('id');
     service.deleteUser(userId)
-    .then(function() {
-      users = users.filter(function(user) {
-        return user._id !== userId
-      });
-      renderAllUsers()
-    })
-  }
-
-  function renderUser(user) {
-    selectedUser = user;
-    $usernameFld.val(user.username);
-    $passwordFld.val('');
-    $firstFld.val(user.first);
-    $lastFld.val(user.last);
-    $roleFld.val(user.role);
-  }
-
-  function updateUser() {
-    const updatedUser = {
-      _id: selectedUser._id,
-      username: $usernameFld.val(),
-      password: $passwordFld.val() ? $passwordFld.val() : selectedUser.password,
-      first: $firstFld.val(),
-      last: $lastFld.val(),
-      role: $roleFld.val(),
-    };
-    service.updateUser(selectedUser._id, updatedUser)
-    .then(function(status) {
-      users = users.map(function(user) {
-        return user._id === selectedUser._id ? updatedUser : user;
-      });
+    .then(() => {
+      users = users.filter((user) => user.getId() !== userId);
       renderAllUsers();
     });
   }
 
+  function renderUser(user) {
+    selectedUser = user;
+    $usernameFld.val(user.getUsername());
+    $passwordFld.val('');
+    $firstFld.val(user.getFirstName());
+    $lastFld.val(user.getLastName());
+    $roleFld.val(user.getRole());
+  }
+
+  function updateUser() {
+    const selectedId = selectedUser.getId();
+    const updatedUser = new User(selectedId)
+    .setUsername($usernameFld.val())
+    .setPassword($passwordFld.val() ? $passwordFld.val() : selectedUser.password)
+    .setFirstName($firstFld.val())
+    .setLastName($lastFld.val())
+    .setRole($roleFld.val());
+
+    service.updateUser(selectedId, updatedUser)
+    .then(function() {
+      users = users.map(function(user) {
+        return user.getId() === selectedId ? updatedUser : user;
+      });
+      renderAllUsers();
+      clearForm();
+    });
+  }
+
   function selectUser(event) {
-    const target = event.currentTarget;
-    const $button = $(target);
-    const userId = $button.attr('id');
+    const userId = $(event.currentTarget).attr('id');
     service.findUserById(userId)
     .then(function (user) {
-      renderUser(user)
+      renderUser(users.find((existingUser) => user._id === existingUser.getId()));
     })
   }
 
   function renderAllUsers() {
-    const $template = $(userRowTemplate);
-    const clone = $template.clone();
     $tbody.empty();
     for(let i=0; i<users.length; i++) {
       const user = users[i];
-      const copy = clone.clone();
-      copy.find('.wbdv-username').html(user.username);
-      copy.find('.wbdv-password').html('*'.repeat(user.password.length));
-      copy.find('.wbdv-first-name').html(user.first);
-      copy.find('.wbdv-last-name').html(user.last);
-      copy.find('.wbdv-role').html(user.role);
-      copy.find('.wbdv-delete-btn').attr('id', user._id).click(deleteUser);
-      copy.find('.wbdv-edit-btn').attr('id', user._id).click(selectUser);
+      const copy = $(userRowTemplate).clone();
+      copy.find('.wbdv-username').html(user.getUsername());
+      copy.find('.wbdv-password').html('*'.repeat(user.getPassword().length));
+      copy.find('.wbdv-first-name').html(user.getFirstName());
+      copy.find('.wbdv-last-name').html(user.getLastName());
+      copy.find('.wbdv-role').html(user.getRole());
+      copy.find('.wbdv-delete-btn').attr('id', user.getId()).click(deleteUser);
+      copy.find('.wbdv-edit-btn').attr('id', user.getId()).click(selectUser);
       $tbody.append(copy)
     }
   }
@@ -92,27 +87,55 @@
     const last = $lastFld.val();
     const role = $roleFld.val();
 
+    if (!(username && password && first && last && role)) {
+      alert("All form fields must be filled in to add a user.");
+      return;
+    }
+
     const newUser = {
       username: username,
       password: password,
-      first: first,
-      last: last,
+      firstName: first,
+      lastName: last,
       role: role
     };
 
     service.createUser(newUser)
-    .then(function (actualUser) {
-      users.push(actualUser);
+    .then(function (returnedUser) {
+      users.push(
+          new User(returnedUser._id)
+          .setUsername(returnedUser.username)
+          .setPassword(returnedUser.password)
+          .setFirstName(returnedUser.firstName)
+          .setLastName(returnedUser.lastName)
+          .setRole(returnedUser.role)
+      );
+      renderAllUsers();
+      clearForm();
+    });
+  }
+
+  function findAllUsers() {
+    users = service.findAllUsers()
+    .then(function (allUsers) {
+      users = allUsers.map(function(user) {
+        return new User(user._id)
+        .setUsername(user.username)
+        .setPassword(user.password)
+        .setFirstName(user.firstName)
+        .setLastName(user.lastName)
+        .setRole(user.role);
+      });
       renderAllUsers()
     })
   }
 
-  function findAllUsers() {
-    service.findAllUsers()
-    .then(function (allUsers) {
-      users = allUsers;
-      renderAllUsers()
-    })
+  function clearForm() {
+    $usernameFld.val('');
+    $passwordFld.val('');
+    $firstFld.val('');
+    $lastFld.val('');
+    $roleFld.val('');
   }
 
   function main() {

@@ -53,7 +53,7 @@ function AdminUserServiceClient() {
       method: 'DELETE'
     })
     .then(function(response) {
-      return response.json()
+      return response.json();
     })
   }
 }
