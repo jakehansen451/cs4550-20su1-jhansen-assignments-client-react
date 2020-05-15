@@ -21,7 +21,7 @@ function User(
   this.dob = dob;
 
   // Getters
-  function getId() {
+  this.getId = () => {
     return this.id;
   };
 
@@ -99,7 +99,7 @@ function User(
   };
 
   // Bindings
-  this.getId = getId;
+  this.getId.bind(this);
   this.getUsername.bind(this);
   this.getPassword.bind(this);
   this.getEmail.bind(this);
