@@ -12,8 +12,12 @@
       + '  <td class="user-admin-cell wbdv-last-name"></td>\n'
       + '  <td class="user-admin-cell wbdv-role"></td>\n'
       + '  <td class="user-admin-cell wbdv-controls">\n'
-      + '    <i class="float-right icon-link delete-btn fa-2x fa fa-times wbdv-delete-btn"></i>\n'
-      + '    <i class="float-right icon-link fa-2x fa fa-pencil wbdv-edit-btn"></i>\n'
+      + '    <i id="wbdv-remove" '
+      + '       class="float-right icon-link delete-btn fa-2x fa fa-times wbdv-delete-btn"'
+      + '    ></i>\n'
+      + '    <i id="wbdv-edit"'
+      + '       class="float-right icon-link fa-2x fa fa-pencil wbdv-edit-btn"'
+      + '    ></i>\n'
       + '  </td>\n'
       + '</tr>';
 
