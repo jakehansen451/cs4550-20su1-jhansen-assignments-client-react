@@ -5,13 +5,13 @@
   let service = new AdminUserServiceClient();
   let selectedUser = {};
 
-  const userRowTemplate = '<tr>\n'
-      + '  <td class="wbdv-username"></td>\n'
-      + '  <td class="wbdv-password"></td>\n'
-      + '  <td class="wbdv-first-name"></td>\n'
-      + '  <td class="wbdv-last-name"></td>\n'
-      + '  <td class="wbdv-role"></td>\n'
-      + '  <td class="wbdv-controls">\n'
+  const userRowTemplate = '<tr class="user-admin-row">\n'
+      + '  <td class="user-admin-cell wbdv-username"></td>\n'
+      + '  <td class="user-admin-cell wbdv-password"></td>\n'
+      + '  <td class="user-admin-cell wbdv-first-name"></td>\n'
+      + '  <td class="user-admin-cell wbdv-last-name"></td>\n'
+      + '  <td class="user-admin-cell wbdv-role"></td>\n'
+      + '  <td class="user-admin-cell wbdv-controls">\n'
       + '    <i class="float-right icon-link delete-btn fa-2x fa fa-times wbdv-delete-btn"></i>\n'
       + '    <i class="float-right icon-link fa-2x fa fa-pencil wbdv-edit-btn"></i>\n'
       + '  </td>\n'
@@ -140,11 +140,14 @@
   }
 
   function searchUsers() {
+    function buildRegex(val) {
+      return new RegExp(val ? '.*' + val + '+.*' : '.*');
+    }
     const regexes = [
-      new RegExp($usernameFld.val() ? '.*' + $usernameFld.val() + '+.*' : '.*'),
-      new RegExp($firstFld.val() ? '.*' + $firstFld.val() + '+.*' : '.*'),
-      new RegExp($lastFld.val() ? '.*' + $lastFld.val() + '+.*' : '.*'),
-      new RegExp($roleFld.val() ? '.*' + $roleFld.val() + '+.*' : '.*')
+      buildRegex($usernameFld.val()),
+      buildRegex($firstFld.val()),
+      buildRegex($lastFld.val()),
+      buildRegex($roleFld.val()),
     ];
     renderAllUsers(regexes);
     clearForm();

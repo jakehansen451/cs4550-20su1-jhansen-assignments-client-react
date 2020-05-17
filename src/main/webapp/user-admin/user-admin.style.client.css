@@ -1,0 +1,108 @@
+body {
+  max-width: 100%;
+}
+
+.user-admin-row:nth-child(even) {
+  background-color: var(--lightest-grey);
+}
+
+@media screen and (min-width: 720px) {
+  .user-admin-table-wrapper {
+    overflow: auto;
+    border-radius: 0.25rem;
+    border: 1px solid var(--lighter-grey);
+  }
+
+  .user-admin-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .user-admin-header {
+    background-color: var(--lightest-green);
+  }
+
+  .user-admin-field-title {
+    min-width: max-content;
+    max-width: 100%;
+  }
+
+  .user-admin-field {
+    width: 100%;
+  }
+
+  .user-admin-header-cell,
+  .user-admin-cell {
+    padding: 0.5rem;
+  }
+
+  .tooltiptext {
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .user-admin-table-wrapper {
+    overflow: auto;
+    border-radius: 0.25rem;
+    border: 1px solid var(--lighter-grey);
+  }
+
+  .user-admin-table {
+    width: 100%;
+  }
+
+  .user-admin-header {
+    background-color: var(--lightest-green);
+    width: 100%;
+  }
+
+  .user-admin-header-cell {
+    width: 100%;
+    justify-content: space-between;
+    display: inline-flex;
+  }
+
+  .user-admin-header-row {
+    padding: 0.25rem 0.5rem;
+    display: inline-flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .user-admin-field-title {
+    flex-basis: 12rem;
+    min-width: 85px;
+  }
+
+  .user-admin-field {
+    max-width: 100%;
+    width: 100%;
+    flex-basis: 24rem;
+    min-width: 6rem;
+  }
+
+  .user-admin-row {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .user-admin-cell {
+    overflow: hidden;
+    display: inline-flex;
+    padding: 0.25rem;
+    width: 16.6666%;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .user-admin-row {
+    flex-direction: column;
+    padding: 0 0.5rem;
+  }
+
+  .user-admin-cell {
+    width: 100%
+  }
+}

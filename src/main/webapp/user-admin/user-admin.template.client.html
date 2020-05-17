@@ -22,40 +22,62 @@
 <div class="title-bar">
   <h1>User Admin</h1>
 </div>
-<table>
-  <thead>
-  <tr>
-    <th>Username</th>
-    <th>Password</th>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Role</th>
-    <th></th>
-  </tr>
-  <tr>
-    <td><input class="wbdv-field wbdv-username-fld"/></td>
-    <td><input class="wbdv-field wbdv-password-fld" type="password"/></td>
-    <td><input class="wbdv-field wbdv-first-fld"/></td>
-    <td><input class="wbdv-field wbdv-last-fld"/></td>
-    <td>
-      <select class="wbdv-field wbdv-role-fld">
-        <option value="">-- Select --</option>
-        <option value="Faculty">Faculty</option>
-        <option value="Student">Student</option>
-        <option value="Admin">Admin</option>
-      </select>
-    </td>
-    <td>
-      <span class="float-right" style="white-space: nowrap">
+<div class="user-admin-table-wrapper">
+  <table class="user-admin-table">
+    <thead class="user-admin-header">
+    <tr class="user-admin-header-row">
+      <th class="user-admin-header-cell">
+        <div class="user-admin-field-title">Username</div>
+        <input
+            class="wbdv-field user-admin-field wbdv-username-fld"
+            style="resize:horizontal"
+        />
+      </th>
+      <th class="user-admin-header-cell">
+        <div class="user-admin-field-title">Password</div>
+        <input
+            class="wbdv-field user-admin-field wbdv-password-fld"
+            style="resize:horizontal"
+            type="password"/></th>
+      <th class="user-admin-header-cell">
+        <div class="user-admin-field-title">First Name</div>
+        <input
+            class="wbdv-field user-admin-field wbdv-first-fld"
+            style="resize:horizontal"
+        />
+      </th>
+      <th class="user-admin-header-cell">
+        <div class="user-admin-field-title">Last Name</div>
+        <input
+            class="wbdv-field user-admin-field wbdv-last-fld"
+            style="resize:horizontal"
+        />
+      </th>
+      <th class="user-admin-header-cell">
+        <div class="user-admin-field-title">Role</div>
+        <select
+            class="wbdv-field user-admin-field wbdv-role-fld"
+            style="resize:horizontal"
+        >
+          <option value="">-- Select --</option>
+          <option value="Faculty">Faculty</option>
+          <option value="Student">Student</option>
+          <option value="Admin">Admin</option>
+        </select>
+      </th>
+      <th class="user-admin-header-cell">
+        <span class="float-right" style="white-space: nowrap">
         <i class="icon-link fa-2x fa fa-search wbdv-search-btn"></i>
         <i class="icon-link fa-2x fa fa-plus wbdv-add-btn"></i>
         <i class="icon-link fa-2x fa fa-check wbdv-update-btn"></i>
       </span>
-    </td>
-  </tr>
-  </thead>
-  <tbody>
-  </tbody>
-</table>
+      </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    </tbody>
+  </table>
+</div>
 </body>
 </html>
