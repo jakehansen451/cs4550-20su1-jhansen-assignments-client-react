@@ -64,7 +64,6 @@
         });
         renderAllUsers();
         clearForm();
-        selectedUser = undefined;
       });
     }
   }
@@ -172,6 +171,7 @@
     $firstFld.val('');
     $lastFld.val('');
     $roleFld.val('');
+    selectedUser = undefined;
   }
 
   function main() {
