@@ -3,7 +3,7 @@
   let $tbody, $searchBtn, $addBtn, $updateBtn;
   let $usernameFld, $passwordFld, $firstFld, $lastFld, $roleFld;
   let service = new AdminUserServiceClient();
-  let selectedUser = {};
+  let selectedUser;
 
   /*
    * While embedding HTML in JS code isn't ideal (until we get to react), this
@@ -48,22 +48,25 @@
   }
 
   function updateUser() {
-    const selectedId = selectedUser.getId();
-    const updatedUser = new User(selectedId)
-    .setUsername($usernameFld.val())
-    .setPassword($passwordFld.val() ? $passwordFld.val() : selectedUser.password)
-    .setFirstName($firstFld.val())
-    .setLastName($lastFld.val())
-    .setRole($roleFld.val());
+    if (selectedUser) {
+      const selectedId = selectedUser.getId();
+      const updatedUser = new User(selectedId)
+      .setUsername($usernameFld.val())
+      .setPassword($passwordFld.val() ? $passwordFld.val() : selectedUser.password)
+      .setFirstName($firstFld.val())
+      .setLastName($lastFld.val())
+      .setRole($roleFld.val());
 
-    service.updateUser(selectedId, updatedUser)
-    .then(function() {
-      users = users.map(function(user) {
-        return user.getId() === selectedId ? updatedUser : user;
+      service.updateUser(selectedId, updatedUser)
+      .then(function() {
+        users = users.map(function(user) {
+          return user.getId() === selectedId ? updatedUser : user;
+        });
+        renderAllUsers();
+        clearForm();
+        selectedUser = undefined;
       });
-      renderAllUsers();
-      clearForm();
-    });
+    }
   }
 
   function selectUser(event) {
