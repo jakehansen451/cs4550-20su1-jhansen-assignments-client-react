@@ -5,6 +5,12 @@
   let service = new AdminUserServiceClient();
   let selectedUser = {};
 
+  /*
+   * While embedding HTML in JS code isn't ideal (until we get to react), this
+   * code enables the rendering of the table without a brief flash of an empty
+   * row caused by a delay between the first render and the call to
+   * renderAllUsers that empties the tbody tag of the template row.
+   */
   const userRowTemplate = '<tr class="user-admin-row">\n'
       + '  <td class="user-admin-cell wbdv-username"></td>\n'
       + '  <td class="user-admin-cell wbdv-password"></td>\n'

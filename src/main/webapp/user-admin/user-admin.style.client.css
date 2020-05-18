@@ -6,20 +6,21 @@ body {
   background-color: var(--lightest-grey);
 }
 
-@media screen and (min-width: 720px) {
-  .user-admin-table-wrapper {
-    overflow: auto;
-    border-radius: 0.25rem;
-    border: 1px solid var(--lighter-grey);
-  }
+.user-admin-table-wrapper {
+  overflow: auto;
+  border-radius: 0.25rem;
+  border: 1px solid var(--lighter-grey);
+}
 
+.user-admin-header {
+  background-color: var(--lightest-green);
+  width: 100%;
+}
+
+@media screen and (min-width: 720px) {
   .user-admin-table {
     border-collapse: collapse;
     width: 100%;
-  }
-
-  .user-admin-header {
-    background-color: var(--lightest-green);
   }
 
   .user-admin-field-title {
@@ -35,25 +36,10 @@ body {
   .user-admin-cell {
     padding: 0.5rem;
   }
-
-  .tooltiptext {
-    visibility: hidden;
-  }
 }
 
 @media screen and (max-width: 720px) {
-  .user-admin-table-wrapper {
-    overflow: auto;
-    border-radius: 0.25rem;
-    border: 1px solid var(--lighter-grey);
-  }
-
   .user-admin-table {
-    width: 100%;
-  }
-
-  .user-admin-header {
-    background-color: var(--lightest-green);
     width: 100%;
   }
 
