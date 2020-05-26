@@ -180,6 +180,9 @@
     $addBtn = $('.wbdv-add-btn');
     $updateBtn = $('.wbdv-update-btn');
 
+    $("#hello").html("Hello World!")
+
+
     $searchBtn.click(searchUsers);
     $addBtn.click(createUser);
     $updateBtn.click(updateUser);
