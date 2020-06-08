@@ -182,6 +182,7 @@
 
     $("#hello").html("Hello World!")
 
+    $("p").click(function(){ alert("Click"); });
 
     $searchBtn.click(searchUsers);
     $addBtn.click(createUser);
