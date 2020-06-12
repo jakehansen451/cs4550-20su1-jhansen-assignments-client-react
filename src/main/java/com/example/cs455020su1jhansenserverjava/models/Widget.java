@@ -10,6 +10,7 @@ public class Widget {
   // @Id
   // @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
+  private String tid;
   private String name;
   private String type;
   private int widgetOrder;
@@ -51,6 +52,14 @@ public class Widget {
 
   public void setId(Integer id) {
     this.id = id;
+  }
+
+  public String getTopicId() {
+    return tid;
+  }
+
+  public void setTopicId(String tid) {
+    this.tid = tid;
   }
 
   public String getName() {
