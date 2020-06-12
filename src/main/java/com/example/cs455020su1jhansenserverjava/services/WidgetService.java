@@ -4,6 +4,7 @@ import com.example.cs455020su1jhansenserverjava.models.Widget;
 // import com.example.cs455020su1jhansenserverjava.repositories.WidgetRepository;
 // import org.springframework.beans.factory.annotation.Autowired;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -16,11 +17,8 @@ public class WidgetService {
 
   List<Widget> widgets = new ArrayList<>();
   {
-    widgets.add(new Widget(123, "Widget 1", "HEADING"));
-    widgets.add(new Widget(234, "Widget 2", "PARAGRAPH"));
-    widgets.add(new Widget(345, "Widget 3", "YOUTUBE"));
-    widgets.add(new Widget(432, "Widget 4", "IMAGE"));
-    widgets.add(new Widget(567, "Widget 5", "PARAGRAPH"));
+    widgets.add(new Widget(123, "Widget 1", "heading", "5edec49cea7e7e00170194f2"));
+    widgets.add(new Widget(234, "Widget 2", "paragraph", "5edec49cea7e7e00170194f2"));
   }
 
   public Widget createWidget(Widget newWidget) {
@@ -30,8 +28,13 @@ public class WidgetService {
   }
 
   public List<Widget> findWidgetsForTopic(String tid) {
-    return this.widgets.stream().filter((widget) -> widget.getTopicId().equals(tid)).collect(
-        Collectors.toCollection(ArrayList::new));
+    ArrayList<Widget> results = new ArrayList<>();
+    for (Widget w : widgets) {
+      if (w.getTopicId().equals(tid)) {
+        results.add(w);
+      }
+    }
+    return results;
   }
 
   /*

@@ -30,12 +30,6 @@ public class WidgetController {
     return widgetService.updateWidget(widgetId, updatedWidget);
   }
 
-  @PostMapping("/api/widgets")
-  public Widget createStandaloneWidget(
-      @RequestBody Widget newWidget) {
-    return widgetService.createWidget(newWidget);
-  }
-
   @PostMapping("/api/topics/{tid}/widgets")
   public Widget createWidget(
       @PathVariable("tid") String topicId,
@@ -63,6 +57,8 @@ public class WidgetController {
   @GetMapping("/api/topics/{topicId}/widgets")
   public List<Widget> findWidgetsForTopic(
       @PathVariable("topicId") String tid) {
-    return widgetService.findWidgetsForTopic(tid);
+    List<Widget> widgets = widgetService.findWidgetsForTopic(tid);
+    System.out.println(widgets);
+    return widgets;
   }
 }

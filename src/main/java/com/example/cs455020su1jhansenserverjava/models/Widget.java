@@ -40,10 +40,11 @@ public class Widget {
   public Widget() {
   }
 
-  public Widget(Integer id, String name, String type) {
+  public Widget(Integer id, String name, String type, String tid) {
     this.id = id;
     this.name = name;
     this.type = type;
+    this.tid = tid;
   }
 
   public Integer getId() {
