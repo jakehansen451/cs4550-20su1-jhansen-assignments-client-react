@@ -1,4 +1,4 @@
-package com.example.cs455020su1jhansenclientreact;
+package com.example.cs455020su1jhansenserverjava;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.example.cs455020su1jhansenclientreact;
+package com.example.cs455020su1jhansenserverjava;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
