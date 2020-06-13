@@ -1,12 +1,13 @@
 package com.example.cs455020su1jhansenserverjava.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 // import javax.persistence.*;
 
 // @Entity
 // @Table(name="widgets")
-public class Widget {
+public class Widget implements Comparable<Widget> {
   // @Id
   // @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
@@ -40,13 +41,15 @@ public class Widget {
   public Widget() {
   }
 
-  public Widget(Integer id, String name, String type, String tid) {
+  public Widget(Integer id, String name, String type, String tid, int widgetOrder) {
     this.id = id;
     this.name = name;
     this.type = type;
     this.tid = tid;
+    this.widgetOrder = widgetOrder;
   }
 
+  @JsonProperty("_id")
   public Integer getId() {
     return id;
   }
@@ -79,6 +82,7 @@ public class Widget {
     this.type = type;
   }
 
+  // @JsonIgnore
   public int getWidgetOrder() {
     return widgetOrder;
   }
@@ -150,5 +154,10 @@ public class Widget {
 
   public void setValue(String value) {
     this.value = value;
+  }
+
+  @Override
+  public int compareTo(Widget o) {
+    return this.getWidgetOrder() - o.getWidgetOrder();
   }
 }

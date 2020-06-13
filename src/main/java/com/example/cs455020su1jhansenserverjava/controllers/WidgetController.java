@@ -43,8 +43,7 @@ public class WidgetController {
   }
 
   @GetMapping("/api/widgets/{widgetId}")
-  public Widget findWidgetById(
-      @PathVariable("widgetId") Integer wid) {
+  public Widget findWidgetById(@PathVariable("widgetId") Integer wid) {
     return widgetService.findWidgetById(wid);
   }
 
@@ -60,5 +59,15 @@ public class WidgetController {
     List<Widget> widgets = widgetService.findWidgetsForTopic(tid);
     System.out.println(widgets);
     return widgets;
+  }
+
+  @GetMapping("/api/widgets/{widgetId}/reorderUp")
+  public List<Widget> reorderWidgetUp(@PathVariable("widgetId") Integer wid) {
+    return widgetService.reorderUp(wid);
+  }
+
+  @GetMapping("/api/widgets/{widgetId}/reorderDown")
+  public List<Widget> reorderWidgetDown(@PathVariable("widgetId") Integer wid) {
+    return widgetService.reorderDown(wid);
   }
 }

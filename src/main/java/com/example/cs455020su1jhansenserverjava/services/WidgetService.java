@@ -3,8 +3,7 @@ package com.example.cs455020su1jhansenserverjava.services;
 import com.example.cs455020su1jhansenserverjava.models.Widget;
 // import com.example.cs455020su1jhansenserverjava.repositories.WidgetRepository;
 // import org.springframework.beans.factory.annotation.Autowired;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.Collections;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -16,13 +15,11 @@ public class WidgetService {
   // WidgetRepository repository;
 
   List<Widget> widgets = new ArrayList<>();
-  {
-    widgets.add(new Widget(123, "Widget 1", "heading", "5edec49cea7e7e00170194f2"));
-    widgets.add(new Widget(234, "Widget 2", "paragraph", "5edec49cea7e7e00170194f2"));
-  }
 
   public Widget createWidget(Widget newWidget) {
     newWidget.setId(widgets.size() * 20);
+    int order = this.findWidgetsForTopic(newWidget.getTopicId()).size();
+    newWidget.setWidgetOrder(order);
     this.widgets.add(newWidget);
     return newWidget;
   }
@@ -34,6 +31,7 @@ public class WidgetService {
         results.add(w);
       }
     }
+    Collections.sort(results);
     return results;
   }
 
@@ -85,5 +83,43 @@ public class WidgetService {
 
   public List<Widget> findAllWidgets() {
     return this.widgets;
+  }
+
+  public List<Widget> reorderUp(int wid) {
+    List<Widget> widgets = this.findWidgetsForTopic(this.findWidgetById(wid).getTopicId());
+    Widget reorder = null;
+    for (int i = 1; i < widgets.size(); i++) {
+      if (widgets.get(i).getId() == wid) {
+        reorder = widgets.get(i);
+      }
+    }
+    if (reorder == null) {
+      return widgets;
+    } else {
+      int order = reorder.getWidgetOrder();
+      reorder.setWidgetOrder(order - 1);
+      widgets.get(order - 1).setWidgetOrder(order);
+    }
+    Collections.sort(widgets);
+    return widgets;
+  }
+
+  public List<Widget> reorderDown(int wid) {
+    List<Widget> widgets = this.findWidgetsForTopic(this.findWidgetById(wid).getTopicId());
+    Widget reorder = null;
+    for (int i = 0; i < widgets.size() - 1; i++) {
+      if (widgets.get(i).getId() == wid) {
+        reorder = widgets.get(i);
+      }
+    }
+    if (reorder == null) {
+      return widgets;
+    } else {
+      int order = reorder.getWidgetOrder();
+      reorder.setWidgetOrder(order + 1);
+      widgets.get(order + 1).setWidgetOrder(order);
+    }
+    Collections.sort(widgets);
+    return widgets;
   }
 }
