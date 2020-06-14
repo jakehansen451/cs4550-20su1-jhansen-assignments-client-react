@@ -57,7 +57,6 @@ public class WidgetController {
   public List<Widget> findWidgetsForTopic(
       @PathVariable("topicId") String tid) {
     List<Widget> widgets = widgetService.findWidgetsForTopic(tid);
-    System.out.println(widgets);
     return widgets;
   }
 
