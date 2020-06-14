@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 // @Entity
 // @Table(name="widgets")
 public class Widget implements Comparable<Widget> {
+
   // @Id
   // @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
@@ -23,6 +24,7 @@ public class Widget implements Comparable<Widget> {
   private String cssClass;
   private String style;
   private String value;
+  private int size;
 
   /*
   @ManyToOne
@@ -155,6 +157,15 @@ public class Widget implements Comparable<Widget> {
   public void setValue(String value) {
     this.value = value;
   }
+
+  public int getSize() {
+    return size;
+  }
+
+  public void setSize(int size) {
+    this.size = size;
+  }
+
 
   @Override
   public int compareTo(Widget o) {
